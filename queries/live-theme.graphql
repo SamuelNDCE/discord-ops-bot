@@ -1,0 +1,12 @@
+query LiveTheme {
+  themes(first: 5, roles: [MAIN]) {
+    edges {
+      node {
+        id
+        name
+        role
+        updatedAt
+      }
+    }
+  }
+}

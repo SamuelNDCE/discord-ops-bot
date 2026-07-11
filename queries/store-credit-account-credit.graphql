@@ -1,0 +1,12 @@
+mutation StoreCreditAccountCredit($customerId: ID!, $amount: Decimal!, $currencyCode: CurrencyCode!) {
+  storeCreditAccountCredit(
+    id: $customerId
+    creditInput: { creditAmount: { amount: $amount, currencyCode: $currencyCode } }
+  ) {
+    storeCreditAccountTransaction {
+      amount { amount currencyCode }
+      account { id balance { amount currencyCode } }
+    }
+    userErrors { field message }
+  }
+}

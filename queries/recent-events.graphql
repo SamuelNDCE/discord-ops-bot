@@ -1,0 +1,18 @@
+query RecentEvents {
+  events(first: 50, reverse: true) {
+    edges {
+      node {
+        id
+        action
+        message
+        createdAt
+        attributeToUser
+        attributeToApp
+        appTitle
+        ... on BasicEvent {
+          author
+        }
+      }
+    }
+  }
+}

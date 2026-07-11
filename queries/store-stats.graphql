@@ -1,0 +1,10 @@
+query StoreStats {
+  shop { name }
+  ordersCount(query: "financial_status:paid") { count precision }
+  productsCount { count precision }
+  activeProductsCount: productsCount(query: "status:active") { count precision }
+  customersCount { count precision }
+  orders(first: 250, query: "financial_status:paid") {
+    edges { node { totalPriceSet { shopMoney { amount currencyCode } } } }
+  }
+}

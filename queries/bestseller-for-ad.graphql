@@ -1,0 +1,17 @@
+{
+  collectionByHandle(handle: "bestsellers") {
+    products(first: 5) {
+      edges {
+        node {
+          id
+          title
+          handle
+          descriptionHtml
+          featuredImage {
+            url
+          }
+        }
+      }
+    }
+  }
+}

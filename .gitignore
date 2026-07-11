@@ -1,0 +1,9 @@
+node_modules/
+.env
+webhooks/
+*-state.json
+reminders.json
+todos.json
+progress-map.json
+support-email-threads.json
+board.md

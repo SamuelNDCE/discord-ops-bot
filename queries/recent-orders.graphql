@@ -1,0 +1,30 @@
+query RecentOrders {
+  orders(first: 20, reverse: true, sortKey: CREATED_AT) {
+    edges {
+      node {
+        id
+        name
+        createdAt
+        displayFinancialStatus
+        displayFulfillmentStatus
+        customer {
+          displayName
+        }
+        currentTotalPriceSet {
+          shopMoney {
+            amount
+            currencyCode
+          }
+        }
+        lineItems(first: 5) {
+          edges {
+            node {
+              title
+              quantity
+            }
+          }
+        }
+      }
+    }
+  }
+}

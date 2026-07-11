@@ -1,0 +1,11 @@
+query LaunchStatus {
+  shop {
+    name
+    primaryDomain { host sslEnabled }
+  }
+  onlineStore {
+    passwordProtection { enabled }
+  }
+  productsCount { count precision }
+  activeProductsCount: productsCount(query: "status:active") { count precision }
+}

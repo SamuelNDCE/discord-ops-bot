@@ -1,0 +1,22 @@
+query ProductEconomics {
+  products(first: 50) {
+    edges {
+      node {
+        id
+        title
+        status
+        totalInventory
+        variants(first: 1) {
+          edges {
+            node {
+              price
+              inventoryItem {
+                unitCost { amount }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

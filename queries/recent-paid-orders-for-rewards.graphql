@@ -1,0 +1,21 @@
+query RecentPaidOrdersForRewards {
+  orders(first: 20, reverse: true, sortKey: CREATED_AT, query: "financial_status:paid") {
+    edges {
+      node {
+        id
+        name
+        displayFinancialStatus
+        customer {
+          id
+          displayName
+        }
+        currentSubtotalPriceSet {
+          shopMoney {
+            amount
+            currencyCode
+          }
+        }
+      }
+    }
+  }
+}

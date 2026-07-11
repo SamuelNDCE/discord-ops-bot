@@ -1,0 +1,21 @@
+{
+  "name": "hub-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Discord hub bot for Samuel's server",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "deploy-commands": "node deploy-commands.js",
+    "start": "node index.js",
+    "supervise": "node run.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "imapflow": "^1.4.3",
+    "mailparser": "^3.9.14",
+    "nodemailer": "^9.0.3",
+    "sharp": "^0.35.3"
+  }
+}
