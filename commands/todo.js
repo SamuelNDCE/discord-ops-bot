@@ -46,7 +46,7 @@ module.exports = {
         .setName('myprogress')
         .setDescription('One-time: register which changelog area is your progress channel')
         .addStringOption((o) =>
-          o.setName('area').setDescription('e.g. samuel-progress, owens-progress').setRequired(true)
+          o.setName('area').setDescription('e.g. alice-progress, bob-progress').setRequired(true)
         )
     ),
   async execute(interaction) {
@@ -125,7 +125,7 @@ module.exports = {
         await postToChangelog(area, await store.buildStartedMessage(result.todo));
         progressLine = `Logged to your **${area}** channel.`;
       } else {
-        progressLine = `No progress channel registered for you yet — run \`/todo myprogress area:<your-area>\` once (e.g. \`samuel-progress\`) so this logs there automatically next time.`;
+        progressLine = `No progress channel registered for you yet — run \`/todo myprogress area:<your-area>\` once (e.g. \`alice-progress\`) so this logs there automatically next time.`;
       }
       await interaction.reply({
         content:

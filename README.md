@@ -1,4 +1,4 @@
-# sam-discord-ops-bot
+# discord-ops-bot
 
 A Discord "ops hub" bot for a small e-commerce/dev business: Shopify order/launch/stats watchers, Meta (Facebook/Instagram) ads monitoring and auto-posting, Netlify deploy tracking, a shared reaction-based team todo list, email support-thread bridging, reminders, and a local-LLM (Ollama) `/ask` command.
 
@@ -24,7 +24,7 @@ Most features degrade gracefully if their env vars are unset (e.g. no `FB_ACCESS
 
 ## Part of a larger collection
 
-This repo is one piece of a set of tools published together — see [sam-toolkit](https://github.com/SamuelNDCE/sam-toolkit) for the full index.
+This repo is one piece of a set of tools published together — see [toolkit](https://github.com/SamuelNDCE/toolkit) for the full index.
 
 ## License
 

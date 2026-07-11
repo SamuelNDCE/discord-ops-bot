@@ -1,8 +1,8 @@
-// Maps a Discord user id -> their progress changelog area (e.g. "samuel-progress"). Self-service
+// Maps a Discord user id -> their progress changelog area (e.g. "alice-progress"). Self-service
 // (each person registers their own via /todo myprogress) rather than guessed from username or
 // pulled from the guild member list — the bulk member-list endpoint needs a privileged intent
 // this bot doesn't have enabled, and username-guessing would be fragile (Discord usernames don't
-// necessarily match the "samuel"/"owens" naming Samuel picked for the channels).
+// necessarily match whatever naming you pick for the channels).
 const fs = require('node:fs');
 const path = require('node:path');
 

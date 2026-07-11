@@ -1,11 +1,11 @@
 // Lets Claude post a progress update from any session — same "standalone script" shape as
 // add-todo.js/notify-commit.js, reusing the existing generic postToChangelog. Each person has
-// their own AI activity channel (#samuel-claude-progress, #owens-claude-progress) rather than
+// their own AI activity channel (#alice-claude-progress, #bob-claude-progress) rather than
 // one shared #claude-progress, so every call must say whose session it is via --owner.
 require('dotenv').config({ path: require('node:path').join(__dirname, '.env') });
 const { postToChangelog } = require('./lib');
 
-const OWNERS = ['samuel', 'owens'];
+const OWNERS = ['alice', 'bob'];
 
 const args = process.argv.slice(2);
 const ownerIndex = args.indexOf('--owner');

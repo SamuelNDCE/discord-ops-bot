@@ -4,7 +4,7 @@ const { ImapFlow } = require('imapflow');
 
 const CHECK_INTERVAL_MS = 3 * 60_000;
 const STATE_PATH = path.join(__dirname, 'email-watch-state.json');
-const SAMUEL_USER_ID = process.env.OWNER_DISCORD_USER_ID; // the Discord user to DM notifications to
+const OWNER_USER_ID = process.env.OWNER_DISCORD_USER_ID; // the Discord user to DM notifications to
 const SEARCH_WINDOW_DAYS = 7; // plenty of margin at a few-minutes polling cadence
 
 // Add more rules here as new business-relevant email patterns come up (e.g. cancellations).
@@ -76,9 +76,9 @@ async function checkOnce(client) {
   saveState({ lastUid: maxUidSeen });
   if (isFirstRun || !matches.length) return; // first run establishes a baseline, doesn't replay old mail
 
-  const samuel = await client.users.fetch(SAMUEL_USER_ID);
+  const owner = await client.users.fetch(OWNER_USER_ID);
   for (const { rule, envelope } of matches) {
-    await samuel.send(formatMatch(rule, envelope));
+    await owner.send(formatMatch(rule, envelope));
   }
 }
 

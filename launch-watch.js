@@ -65,7 +65,7 @@ async function checkStatusFields() {
 
 // General activity feed: catches everything (product edits, publishes, collection/discount/page changes,
 // etc.) via Shopify's own audit log, WITH attribution — attributeToUser + author tells us if a real
-// staff member (e.g. Samuel or his friend, if invited as Shopify staff) made the change in the Admin UI,
+// staff member (e.g. you or a colleague, if invited as Shopify staff) made the change in the Admin UI,
 // vs. an app/API/CLI action.
 async function checkEvents() {
   let data;

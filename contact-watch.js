@@ -4,7 +4,7 @@ const { netlifyApi } = require('./lib');
 
 const CHECK_INTERVAL_MS = 3 * 60_000;
 const STATE_PATH = path.join(__dirname, 'contact-watch-state.json');
-const SAMUEL_USER_ID = process.env.OWNER_DISCORD_USER_ID; // the Discord user to DM notifications to
+const OWNER_USER_ID = process.env.OWNER_DISCORD_USER_ID; // the Discord user to DM notifications to
 
 function loadState() {
   try {
@@ -64,9 +64,9 @@ async function checkOnce(client) {
   saveState({ lastSeenByForm: nextLastSeen });
   if (!newSubmissions.length) return;
 
-  const samuel = await client.users.fetch(SAMUEL_USER_ID);
+  const owner = await client.users.fetch(OWNER_USER_ID);
   for (const s of newSubmissions) {
-    await samuel.send(formatSubmission(s));
+    await owner.send(formatSubmission(s));
   }
 }
 
